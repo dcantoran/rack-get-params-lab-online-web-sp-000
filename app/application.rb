@@ -32,14 +32,6 @@ class Application
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
-    # elsif req.path.match(/add/)
-    #   added_item = req.params["item"]
-    #   if @@items.include?(added_item)
-    #     @@cart << product
-    #     resp.write "added #{added_item}"
-    #   else 
-    #     resp.write "We don't have that item"
-    #   end
     else
       resp.write "Path Not Found"
     end
