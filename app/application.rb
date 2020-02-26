@@ -19,6 +19,7 @@ class Application
       product = req.params["item"]
       if !@@items.include?(product)
         @@cart << product
+        resp.write "added #{product}"
       end 
       
     end 
