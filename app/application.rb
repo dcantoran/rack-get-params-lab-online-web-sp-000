@@ -34,7 +34,7 @@ class Application
       resp.write handle_search(search_term)
     elsif req.path.match(/add/)
       product = req.params["item"]
-      if !@@items.include?(product)
+      if @@items.include?(product)
         @@cart << product
         resp.write "added #{product}"
       else 
