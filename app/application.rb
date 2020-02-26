@@ -16,9 +16,11 @@ class Application
     end 
     
     if req.path.match(/add/)
-      if !@@items.include?(search_term)
-        product = req.params["item"]
+      product = req.params["item"]
+      if !@@items.include?(product)
+        @@cart << product
       end 
+      
     end 
 
     if req.path.match(/items/)
