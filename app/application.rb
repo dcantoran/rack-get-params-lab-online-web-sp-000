@@ -20,6 +20,8 @@ class Application
       if !@@items.include?(product)
         @@cart << product
         resp.write "added #{product}"
+      else 
+        resp.write "We don't have that item"
       end 
       
     end 
