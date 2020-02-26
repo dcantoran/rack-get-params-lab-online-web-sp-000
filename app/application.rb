@@ -17,11 +17,8 @@ class Application
     
     if req.path.match(/add/)
       if !@@items.include?(search_term)
-        @@cart << search_term
+        product = req.params["item"]
       end 
-    elsif req.path.match(/search/)
-      search_term = req.params["item"]
-      resp.write handle_search(search_term)
     end 
 
     if req.path.match(/items/)
